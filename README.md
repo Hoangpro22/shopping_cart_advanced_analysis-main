@@ -71,12 +71,19 @@ Dashboard Streamlit với tải CSV
 src/streamlit_app.py
 
 ## Scripts chính
-- `src/apriori_library.py` — helpers cho preprocessing, basket, mining.
-- `src/cluster_from_rules.py` — mine rules → tạo binary features.
-- `src/cluster_pipeline.py` — tạo weighted features, RFM, chọn K, phân cụm.
-- `src/compare_configurations.py` — so sánh cấu hình clustering.
-- `src/generate_cluster_profiles.py` — đặt tên và mô tả cụm.
-- `src/streamlit_app.py` 
+-Scripts chính
+
+ -src/apriori_library.py — helpers cho preprocessing, basket, mining.
+
+ -src/cluster_from_rules.py — mine rules → tạo binary features.
+
+- src/cluster_pipeline.py — tạo weighted features, RFM, chọn K, phân cụm.
+
+ -src/compare_configurations.py — so sánh cấu hình clustering.
+
+ -src/generate_cluster_profiles.py — đặt tên và mô tả cụm.
+
+ -src/streamlit_app.py — ứng dụng dashboard.
 
 ## Cách chạy (Windows)
 1. Kích hoạt môi trường và cài thư viện:
@@ -98,12 +105,22 @@ python -m streamlit run src/streamlit_app.py
 ```
 
 ## Lưu ý kỹ thuật
-- Apriori có thể tiêu thụ nhiều RAM trên ma trận lớn — nếu gặp lỗi, tăng `min_support` hoặc dùng FP-Growth.
+-Apriori có thể tiêu thụ nhiều RAM trên ma trận lớn. Nếu gặp lỗi, tăng min_support hoặc dùng FP-Growth, vốn là một biến thể hiệu quả hơn. Tài liệu của mlxtend mô tả thuật toán Apriori và cách sử dụng; đây là một nguồn tham khảo hữu ích khi cần kiểm tra tham số hoặc hiểu bản chất thuật toán.
+
 - Đã fix các lỗi hay gặp: Windows console Unicode, lỗi mảng rỗng khi so sánh cấu hình.
 
 ## Trạng thái hiện tại
-- Hầu hết pipeline và artifacts đã sinh ra trong `data/processed/`.
-- Dashboard tiếng Việt đã sẵn sàng, có biểu đồ phân bố cụm, PCA tương tác (nếu dữ liệu weighted có sẵn), top rules và chức năng tải CSV.
+- Hầu hết pipeline và artifacts đã sinh ra trong data/processed/.
+
+ - Dashboard tiếng Việt đã sẵn sàng, có:
+
+ - biểu đồ phân bố cụm,
+
+PCA tương tác (nếu dữ liệu weighted có sẵn),
+
+top rules,
+
+- chức năng tải CSV.
 
 ## Gợi ý bước tiếp
 - Tinh chỉnh UI Streamlit (biểu đồ, filter nâng cao).
