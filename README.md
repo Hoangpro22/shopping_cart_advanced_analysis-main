@@ -21,19 +21,54 @@ shopping_cart_advanced_analysis/
 ```
 
 ## Tóm tắt những gì đã làm
-- Tiền xử lý dữ liệu: `data/raw/online_retail.csv` → `data/processed/cleaned_uk_data.csv`.
-- Chuẩn bị giỏ hàng và ma trận boolean: `data/processed/basket_bool.parquet`.
-- Khai thác luật (Apriori & FP-Growth): `data/processed/rules_apriori_filtered.csv`, `data/processed/rules_fpgrowth_filtered.csv`.
-- Chuyển luật thành đặc trưng khách hàng:
-	- Nhị phân: `data/processed/customer_rule_features_binary.csv`
-	- Weighted: `data/processed/customer_rule_features_weighted.csv`
-- Tính RFM và kết hợp: `data/processed/customer_rule_features_rfm.csv`.
-- Chọn số cụm (Silhouette / Elbow): `data/processed/k_selection_results.csv`.
-- Huấn luyện KMeans và lưu nhãn: `data/processed/customer_clusters.csv`.
-- Giảm chiều (PCA) để trực quan: `data/processed/cluster_pca.png`.
-- Tạo hồ sơ & tên cụm (EN+VN): `data/processed/cluster_profile.csv`, `data/processed/cluster_profiles_named.csv`.
-- So sánh cấu hình clustering: `data/processed/config_comparison.csv`.
-- Dashboard Streamlit  với tải CSV: `src/streamlit_app.py`.
+
+Tiền xử lý dữ liệu
+
+data/raw/online_retail.csv → data/processed/cleaned_uk_data.csv
+
+Chuẩn bị giỏ hàng và ma trận boolean
+
+data/processed/basket_bool.parquet
+
+Khai thác luật
+
+Apriori & FP-Growth → data/processed/rules_apriori_filtered.csv, data/processed/rules_fpgrowth_filtered.csv
+
+Chuyển luật thành đặc trưng khách hàng
+
+Nhị phân: data/processed/customer_rule_features_binary.csv
+
+Weighted: data/processed/customer_rule_features_weighted.csv
+
+Tính RFM và kết hợp
+
+data/processed/customer_rule_features_rfm.csv
+
+Chọn số cụm (Silhouette / Elbow)
+
+data/processed/k_selection_results.csv
+
+Huấn luyện KMeans và lưu nhãn
+
+data/processed/customer_clusters.csv
+
+Giảm chiều (PCA) để trực quan
+
+data/processed/cluster_pca.png
+
+Tạo hồ sơ & tên cụm (EN+VN)
+
+data/processed/cluster_profile.csv
+
+data/processed/cluster_profiles_named.csv
+
+So sánh cấu hình clustering
+
+data/processed/config_comparison.csv
+
+Dashboard Streamlit với tải CSV
+
+src/streamlit_app.py
 
 ## Scripts chính
 - `src/apriori_library.py` — helpers cho preprocessing, basket, mining.
